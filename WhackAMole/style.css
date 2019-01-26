@@ -1,0 +1,85 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background: #ffc600;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  background: #ffc600;
+}
+
+h1 {
+  text-align: center;
+  font-size: 9rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.gamemode{
+  padding:0 25px 0 25px;
+  width:600px;
+  margin:15px auto;
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.score {
+  background: rgba(255,255,255,0.2);
+  padding: 0 2rem;
+  line-height: 1;
+  border-radius: 0.8rem;
+}
+
+.game {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+
+.game:hover {
+  cursor: url('./asset/hammer.png'),auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url('./asset/dirtpile.png') bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height:70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url('/asset/mole.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition:all 0.3s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
